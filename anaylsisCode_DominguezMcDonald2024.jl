@@ -23,9 +23,9 @@ pathogensDict = YAML.load(open(pathYaml))
 run(`mkdir -p $outDir`)
 
 D01 = parseTaxonData(inDir)
-annotateDepth!(D01,"/Users/mcdonaldb/projects/micro/00_PrepComparison/totalReadcounts_prepComp_240522_v2.tsv")
+annotateDepth!(D01,"./totalReadcounts_DominguezMcDonald2024.tsv")
 annotateUnmapped!(D01,classStats)
-annotateInput!(D01,"/Users/mcdonaldb/projects/micro/00_PrepComparison/cfDNA_concentration.tsv")
+annotateInput!(D01,"./cfDNA_concentration_DominguezMcDonald2024.tsv")
 dfBKA_mp,dfBKB_mp,BK_A_mp,BK_B_mp = backgroundGenus(D01,pathogensDict,metric="microprop")
 
 dfMaster = buildKnownTable(D01,["B251","B266","B268","B297","B304"],pathogensDict)
